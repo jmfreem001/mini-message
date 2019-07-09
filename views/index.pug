@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  h2 Messages
+  for message in messages
+    .block
+      p #{message.user} said "#{message.text}" 
+      p at #{message.added}
+
+   
