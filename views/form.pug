@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  title= title
+  p Create your message and submit below:
+  form(method='post' action='/new') 
+    input(type='text' name='message' placeholder='Enter your message.')
+    input(type='text' name='name' placeholder='Enter your name')
+    br
+    button#btn(type='submit' ) Submit

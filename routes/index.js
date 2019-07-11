@@ -12,7 +12,13 @@ router.get('/', function(req, res, next) {
 
 /* GET new message page*/
 router.get('/new', function(req, res, next){
-  res.send('NEW PAGE')
-})
+  res.render('form', { title: 'New Message' });
+});
+
+router.post('/new', function( req, res, next){
+  let message = { text: req.body.message, user: req.body.name, added: new Date() };
+  messages.push(message);
+  res.redirect('/');
+});
 
 module.exports = router;
